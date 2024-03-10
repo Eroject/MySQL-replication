@@ -47,10 +47,12 @@ L'option "Préparation de l'Environnement" permet de configurer la machine confi
 
 Note : Si nécessaire, le script peut installer MySQL sur les machines lors de la configuration de la réplication.
 
-###Rapport détaillé
+##Rapport détaillé
+
 Pour des informations plus détaillées sur l'application et son fonctionnement, veuillez consulter le rapport PDF inclus dans le répertoire du projet.
 
 REMARQUE :UNE VIDEO DEMONSTRATIVE EST DISPONIBLE DANS LE DOSSIER 'Video_Demonstration_Projet'
 
-###AUTEUR
+##AUTEUR
+
 AJALE Saad
