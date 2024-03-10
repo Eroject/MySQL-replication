@@ -1,4 +1,4 @@
-##Replication Mysql
+**Replication Mysql
 
 L'application Replication Mysql simplifie la mise en place de réplications unidirectionnelles et bidirectionnelles pour les bases de données MySQL. Elle utilise le fichier "projet.sh" pour l'installation et la configuration, ainsi que le fichier "sql.sh" envoyé par Ansible pour faciliter la manipulation de la réplication.
 
