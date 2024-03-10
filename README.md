@@ -1,8 +1,8 @@
-Replication Mysql
+##Replication Mysql
 
 L'application Replication Mysql simplifie la mise en place de réplications unidirectionnelles et bidirectionnelles pour les bases de données MySQL. Elle utilise le fichier "projet.sh" pour l'installation et la configuration, ainsi que le fichier "sql.sh" envoyé par Ansible pour faciliter la manipulation de la réplication.
 
-+++Installation et Configuration:
+###Installation et Configuration:
 
 >>Ajustez le chemin du répertoire MySQL :
 
@@ -23,7 +23,7 @@ user="votre_nom_utilisateur"
 Chaque machine participant à la réplication recevra le fichier "sql.sh" à executé, situé dans "/home", pour faciliter la manipulation de la réplication.
 Note : Les machines à configurer doivent contenir SSH pour permettre une communication efficace entre les différents nœuds de réplication.
 
-+++Utilisation
+###Utilisation
 >>Pour configurer la réplication, vous aurez besoin des informations suivantes :
 
 -Nom de la base de données
@@ -47,10 +47,10 @@ L'option "Préparation de l'Environnement" permet de configurer la machine confi
 
 Note : Si nécessaire, le script peut installer MySQL sur les machines lors de la configuration de la réplication.
 
-+++Rapport détaillé
+###Rapport détaillé
 Pour des informations plus détaillées sur l'application et son fonctionnement, veuillez consulter le rapport PDF inclus dans le répertoire du projet.
 
 REMARQUE :UNE VIDEO DEMONSTRATIVE EST DISPONIBLE DANS LE DOSSIER 'Video_Demonstration_Projet'
 
-+++AUTEUR
+###AUTEUR
 AJALE Saad
