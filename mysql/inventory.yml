@@ -1,0 +1,53 @@
+---
+
+- name: Exécution de commandes
+
+  hosts: servers
+
+  remote_user: dba
+
+  become: true  # Utiliser le privilège d'administration (sudo)
+
+  become_flags: "-S"  
+
+  
+
+  vars:
+
+    ansible_become_pass: "test"
+
+  tasks:
+
+    - name: Copier le fichier 
+
+      copy:
+
+        src: /home/dba/Desktop/final/slave.sh
+
+        dest: /home/dba
+
+        mode: 0755
+
+    - name: Copier le fichier sql.sh
+
+      copy:
+
+        src: /home/dba/Desktop/final/sql.sh
+
+        dest: /home/dba
+
+        mode: 0755
+
+    - name: Exécution
+
+      shell: |
+
+        bash /home/dba/slave.sh
+
+    - name: Supprimer un fichier
+
+      ansible.builtin.file:
+
+        path: /home/dba/slave.sh
+
+        state: absent

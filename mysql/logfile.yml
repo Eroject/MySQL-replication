@@ -1,0 +1,54 @@
+---
+
+- name: Exécution de commandes et récupération de résultats
+
+  hosts: servers
+
+  remote_user: dba
+
+  become: true
+
+  become_flags: "-S"  
+
+  
+
+  vars:
+
+    ansible_become_pass: "test"
+
+  tasks:
+
+    - name: Exécuter le script shell sur la machine distante
+
+      shell: |
+
+        MYSQL_USER="root"
+
+        MYSQL_PASSWORD="test"
+
+        SHOW_MASTER_STATUS=$(mysql -u"$MYSQL_USER" -p"$MYSQL_PASSWORD" -e "SHOW MASTER STATUS" --skip-column-names)
+
+        BINLOG_FILE_NAME=$(echo "$SHOW_MASTER_STATUS" | awk '{print $1}')
+
+        BINLOG_POSITION=$(echo "$SHOW_MASTER_STATUS" | awk '{print $2}')
+
+        FIRST_LINE=$(echo "$BINLOG_FILE_NAME" | head -n 1)
+
+        echo "$FIRST_LINE"
+
+        echo "$BINLOG_POSITION"
+
+      register: resultat_commande
+
+
+
+    - name: Stocker les résultats localement
+
+      local_action:
+
+        module: copy
+
+        content: "{{ resultat_commande.stdout }}"
+
+        dest: /home/dba/Desktop/final/result.txt
+
